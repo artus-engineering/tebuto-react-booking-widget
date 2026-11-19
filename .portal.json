@@ -1,0 +1,13 @@
+{
+  "$schema": "https://portal.artus.engineering/schemas/portal.json",
+  "projectId": "cmrgjs2u9000uked7tn4geaor",
+  "components": {
+    "react-booking-widget": {
+      "name": "React Booking Widget",
+      "kind": "SERVICE",
+      "environments": {
+        "production": {}
+      }
+    }
+  }
+}
