@@ -5,9 +5,6 @@
     "react-booking-widget": {
       "name": "React Booking Widget",
       "kind": "SERVICE",
-      "integrations": {
-        "sonarqube": "tebuto_react-booking-widget_1010e87a-ca30-4917-a946-eeaa65dede4c"
-      },
       "environments": {
         "production": {}
       }
