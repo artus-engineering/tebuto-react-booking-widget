@@ -9,3 +9,12 @@ holds:
       since: 2026-11-22
       last_checked: 2026-11-22
       migration_pr: null
+    - package: msw
+      root: .
+      current: 2.15.0
+      blocked: ">=3.0.0"
+      reason: "MSW 3 needs source and config changes: import http/HttpResponse from msw/http, rename onUnhandledRequest to onUnhandledFrame, and regenerate public/mockServiceWorker.js."
+      source: automation
+      since: 2026-11-22
+      last_checked: 2026-11-22
+      migration_pr: https://github.com/artus-engineering/tebuto-react-booking-widget/pull/54
