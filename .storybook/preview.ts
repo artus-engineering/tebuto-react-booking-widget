@@ -7,7 +7,7 @@ async function initMocks() {
     if (typeof window !== 'undefined' && !mswInitialized) {
         const { worker } = await import('../src/mocks/browser')
         await worker.start({
-            onUnhandledRequest: 'bypass',
+            onUnhandledFrame: 'bypass',
             serviceWorker: {
                 url: '/mockServiceWorker.js'
             }

@@ -1,6 +1,6 @@
 {
     "name": "@tebuto/react-booking-widget",
-    "version": "1.4.3",
+    "version": "1.4.4",
     "description": "React components for the Tebuto booking and seminars widgets",
     "author": "Artus Engineering GmbH",
     "homepage": "https://tebuto.de",
@@ -43,7 +43,7 @@
         "jest": "30.5.2",
         "jest-environment-jsdom": "30.5.2",
         "lefthook": "^2.2.2",
-        "msw": "2.15.0",
+        "msw": "3.0.7",
         "rollup": "4.68.7",
         "rollup-plugin-dts": "6.5.1",
         "rollup-plugin-peer-deps-external": "2.2.4",
