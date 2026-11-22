@@ -1,50 +1,50 @@
 name: Publish NPM Package
 
 on:
-  release:
-    types:
-      - published
+    release:
+        types:
+            - published
 
 jobs:
-  publish:
-    name: Publish to npm
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write # Required for provenance generation
-      contents: read
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v7
+    publish:
+        name: Publish to npm
+        runs-on: ubuntu-latest
+        permissions:
+            id-token: write # Required for provenance generation
+            contents: read
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v7
 
-      - uses: artus-engineering/.github/actions/setup-pnpm@feb73e3bc8a16c61582dd578627ba5d6dc07e2ca
-        with:
-          version: '11'
+            - uses: artus-engineering/.github/actions/setup-pnpm@feb73e3bc8a16c61582dd578627ba5d6dc07e2ca
+              with:
+                  version: "12"
 
-      - uses: actions/setup-node@v7
-        with:
-          check-latest: false
-          package-manager-cache: false
-          node-version: "24.x"
-          registry-url: "https://registry.npmjs.org"
+            - uses: actions/setup-node@v7
+              with:
+                  check-latest: false
+                  package-manager-cache: false
+                  node-version: "24.x"
+                  registry-url: "https://registry.npmjs.org"
 
-      - name: Install dependencies
-        run: |
-          pnpm install --frozen-lockfile
+            - name: Install dependencies
+              run: |
+                  pnpm install --frozen-lockfile
 
-      - name: Update package.json version
-        run: |
-          VERSION="${{ github.event.release.tag_name }}"
-          VERSION="${VERSION#v}"
-          npm version "$VERSION" --no-git-tag-version --allow-same-version
+            - name: Update package.json version
+              run: |
+                  VERSION="${{ github.event.release.tag_name }}"
+                  VERSION="${VERSION#v}"
+                  npm version "$VERSION" --no-git-tag-version --allow-same-version
 
-      - name: Linting
-        run: pnpm run lint
+            - name: Linting
+              run: pnpm run lint
 
-      - name: Tests
-        run: pnpm run test
+            - name: Tests
+              run: pnpm run test
 
-      - name: Build
-        run: pnpm run build
+            - name: Build
+              run: pnpm run build
 
-      - name: Publish to npm
-        run: npm publish --access public
+            - name: Publish to npm
+              run: npm publish --access public
