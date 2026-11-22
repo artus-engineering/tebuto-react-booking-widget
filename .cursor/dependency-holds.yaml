@@ -1,0 +1,11 @@
+holds:
+    - package: typescript
+      root: .
+      current: 6.0.3
+      blocked: ">=7.0.0"
+      reason: "@rollup/plugin-typescript 12.3.1 (latest) crashes on TypeScript 7 because the native compiler no longer exports ModuleKind.ES2015. The library build failed with TypeError: Cannot read properties of undefined (reading 'ES2015')."
+      blocker: https://github.com/rollup/plugins/issues/2016
+      source: automation
+      since: 2026-11-22
+      last_checked: 2026-11-22
+      migration_pr: null

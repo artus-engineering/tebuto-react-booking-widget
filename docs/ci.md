@@ -4,8 +4,8 @@ Runner: `ubuntu-latest` for artus-engineering org repos. Cross-project tooling: 
 
 ## Workflows
 
-| File | Purpose |
-| --- | --- |
+| File                            | Purpose                                     |
+| ------------------------------- | ------------------------------------------- |
 | `.github/workflows/branch.yaml` | Lint, tests → SonarQube scan → quality gate |
 
 ## Required checks
