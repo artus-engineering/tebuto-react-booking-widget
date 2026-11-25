@@ -7,5 +7,5 @@ holds:
       blocker: https://github.com/rollup/plugins/issues/2016
       source: automation
       since: 2026-11-22
-      last_checked: 2026-11-22
+      last_checked: 2026-11-25
       migration_pr: null
